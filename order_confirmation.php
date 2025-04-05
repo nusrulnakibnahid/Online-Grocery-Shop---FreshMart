@@ -96,28 +96,28 @@ $order_items = $stmt->fetchAll();
                                             <div><?php echo htmlspecialchars($item['name']); ?></div>
                                         </div>
                                     </td>
-                                    <td>$<?php echo number_format($item['price'], 2); ?></td>
+                                    <td>৳<?php echo number_format($item['price'], 2); ?></td>
                                     <td><?php echo $item['quantity']; ?></td>
-                                    <td>$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
+                                    <td>৳<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                         <tfoot>
                             <tr>
                                 <td colspan="3" class="text-end"><strong>Subtotal:</strong></td>
-                                <td>$<?php echo number_format($order['total_amount'] - 5 - ($order['total_amount'] * 0.1), 2); ?></td>
+                                <td>৳<?php echo number_format($order['total_amount'] - 5 - ($order['total_amount'] * 0.1), 2); ?></td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end"><strong>Shipping:</strong></td>
-                                <td>$5.00</td>
+                                <td>৳50.00</td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end"><strong>Tax (10%):</strong></td>
-                                <td>$<?php echo number_format($order['total_amount'] * 0.1, 2); ?></td>
+                                <td>৳<?php echo number_format($order['total_amount'] * 0.1, 2); ?></td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end"><strong>Total:</strong></td>
-                                <td>$<?php echo number_format($order['total_amount'], 2); ?></td>
+                                <td>৳<?php echo number_format($order['total_amount'], 2); ?></td>
                             </tr>
                         </tfoot>
                     </table>
