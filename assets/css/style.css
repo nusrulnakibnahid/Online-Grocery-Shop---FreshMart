@@ -1,0 +1,384 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #ece6ec;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #28a745 !important;
+}
+
+/* Hero Section */
+.hero-section {
+    margin-bottom: 2rem;
+}
+
+.carousel-item {
+    height: 400px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Categories */
+.category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Product Cards */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-img-top {
+    height: 200px;
+    object-fit: contain;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+
+.product-card .card-title {
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-card .card-text {
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.stock-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Special Offers */
+.offer-card {
+    border: 2px dashed #dc3545;
+    background-color: #fff8f8;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #6c757d;
+    margin-right: 10px;
+}
+
+/* Cart */
+.cart-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item:hover {
+    background-color: #e9ecef;
+}
+
+.cart-product-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-control input {
+    width: 50px;
+    text-align: center;
+}
+
+/* Checkout */
+.checkout-summary {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.payment-methods .form-check {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.payment-methods .form-check:hover {
+    background-color: #f8f9fa;
+}
+
+.payment-methods .form-check-input:checked ~ .form-check-label {
+    font-weight: bold;
+}
+
+.payment-methods .form-check-input:checked + .payment-method-label {
+    border-color: #28a745;
+    background-color: #f0fff4;
+}
+
+/* Login & Registration */
+.auth-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #dee2e6;
+}
+
+.auth-divider span {
+    position: relative;
+    background-color: #f8f9fa;
+    padding: 0 1rem;
+}
+
+.social-login-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.social-login-btn i {
+    margin-right: 0.5rem;
+}
+
+/* User Profile */
+.profile-card {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    padding: 2rem;
+    background-color: #28a745;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+}
+
+.profile-body {
+    padding: 2rem;
+}
+
+.profile-tabs .nav-link {
+    color: #6c757d;
+}
+
+.profile-tabs .nav-link.active {
+    color: #28a745;
+    border-bottom: 2px solid #28a745;
+}
+
+/* Orders */
+.order-card {
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.order-body {
+    padding: 1rem;
+}
+
+.order-product {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.order-product:last-child {
+    border-bottom: none;
+}
+
+.order-product img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.order-footer {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.order-status {
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #ffc107;
+}
+
+.status-processing {
+    color: #17a2b8;
+}
+
+.status-shipped {
+    color: #007bff;
+}
+
+.status-delivered {
+    color: #28a745;
+}
+
+.status-cancelled {
+    color: #dc3545;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px;
+    }
+    
+    .carousel-caption {
+        padding: 10px;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+    
+    .product-card .card-img-top {
+        height: 150px;
+    }
+    
+    .cart-product-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item {
+        height: 200px;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-caption p {
+        display: none;
+    }
+    
+    .carousel-caption .btn {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
