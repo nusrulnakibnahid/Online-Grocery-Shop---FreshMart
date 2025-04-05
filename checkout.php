@@ -186,14 +186,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label">Shipping Address</label>
-                                <textarea class="form-control" id="address" name="address" rows="3" required><?php
-                                                                                                                echo htmlspecialchars($_POST['address'] ?? $user['address'] ?? '');
-                                                                                                                ?></textarea>
+                                <textarea class="form-control" id="address" name="address" rows="3" required>
+                            <?php
+                            echo htmlspecialchars($_POST['address'] ?? $user['address'] ?? '');
+                            ?></textarea>
                             </div>
 
 
                             <h5 class="mt-4">Payment Method</h5>
-                            <div class="form-check mb-2">
+                            <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="payment_method" id="cod" value="cod" checked>
                                 <label class="form-check-label d-flex align-items-center" for="cod">
                                     <img src="https://static-00.iconduck.com/assets.00/cash-on-delivery-icon-1024x345-7sgjf338.png" alt="Cash on Delivery Icon" style="height: 20px; margin-right: 8px;">
@@ -203,6 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
+                           <!-- Credit Card -->
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="payment_method" id="credit_card" value="credit_card">
                                 <label class="form-check-label d-flex align-items-center" for="credit_card">
@@ -212,16 +214,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
 
                             <!-- Additional fields for Credit Card Information -->
-                            <div id="credit_card_info" class="mt-4" style="display: none;">
-                                <div class="form-group">
+                            <div id="credit_card_info" class="mt-4 mb-5" style="display: none;">
+                                <div class="form-group mb-3">
                                     <label for="card_number">Card Number</label>
                                     <input type="text" class="form-control" id="card_number" placeholder="Enter your card number">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <label for="expiration_date">Expiration Date</label>
                                     <input type="month" class="form-control" id="expiration_date">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <label for="cvv">CVV</label>
                                     <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
                                 </div>
@@ -230,16 +232,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <script>
                                 // JavaScript to show and hide card details input fields
                                 document.getElementById("credit_card").addEventListener("change", function() {
-                                    if (this.checked) {
-                                        document.getElementById("credit_card_info").style.display = "block";
-                                    } else {
-                                        document.getElementById("credit_card_info").style.display = "none";
-                                    }
+                                    document.getElementById("credit_card_info").style.display = this.checked ? "block" : "none";
                                 });
                             </script>
 
 
 
+                             <!-- Bkash -->
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="payment_method" id="bkash" value="bkash">
                                 <label class="form-check-label d-flex align-items-center" for="bkash">
@@ -249,27 +248,87 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
 
                             <!-- Additional fields for Bkash Payment -->
-                            <div id="bkash_info" class="mt-3" style="display: none;">
-                                <div class="form-group">
+                            <div id="bkash_info" class="mt-3 mb-5" style="display: none;">
+                                <div class="form-group mb-3">
                                     <label for="phone_number">Phone Number</label>
                                     <input type="tel" class="form-control" id="phone_number" placeholder="Enter your Bkash phone number" pattern="[0-9]{11}" required>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <label for="total_payment">Total Payment</label>
                                     <input type="number" class="form-control" id="total_payment" placeholder="Enter total amount" required>
                                 </div>
                             </div>
 
+
+
+                           <!-- Nagad -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="radio" name="payment_method" id="nagad" value="nagad">
+                                <label class="form-check-label d-flex align-items-center" for="nagad">
+                                    <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" alt="Nagad Logo" style="height: 35px; margin-right: 8px;">
+                                    Nagad
+                                </label>
+                            </div>
+
+                            <!-- Additional fields for Nagad Payment -->
+                            <div id="nagad_info" class="mt-3 mb-5" style="display: none;">
+                                <div class="form-group mb-3">
+                                    <label for="nagad_phone">Phone Number</label>
+                                    <input type="tel" class="form-control" id="nagad_phone" placeholder="Enter your Nagad phone number" pattern="[0-9]{11}" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="nagad_amount">Total Payment</label>
+                                    <input type="number" class="form-control" id="nagad_amount" placeholder="Enter total amount" required>
+                                </div>
+                            </div>
+
+
+
+
+                           <!-- Rocket -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="radio" name="payment_method" id="rocket" value="rocket">
+                                <label class="form-check-label d-flex align-items-center" for="rocket">
+                                    <img src="https://images.seeklogo.com/logo-png/31/1/dutch-bangla-rocket-logo-png_seeklogo-317692.png" alt="Rocket Logo" style="height: 35px; margin-right: 8px;">
+                                    Rocket
+                                </label>
+                            </div>
+
+                            <!-- Additional fields for Rocket Payment -->
+                            <div id="rocket_info" class="mt-3 mb-5" style="display: none;">
+                                <div class="form-group mb-3">
+                                    <label for="rocket_phone">Phone Number</label>
+                                    <input type="tel" class="form-control" id="rocket_phone" placeholder="Enter your Rocket phone number" pattern="[0-9]{11}" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="rocket_amount">Total Payment</label>
+                                    <input type="number" class="form-control" id="rocket_amount" placeholder="Enter total amount" required>
+                                </div>
+                            </div>
+
+
                             <script>
-                                // JavaScript to show and hide Bkash details input fields
-                                document.getElementById("bkash").addEventListener("change", function() {
-                                    if (this.checked) {
-                                        document.getElementById("bkash_info").style.display = "block";
-                                    } else {
-                                        document.getElementById("bkash_info").style.display = "none";
-                                    }
+                                const paymentMethods = ['credit_card', 'bkash', 'nagad', 'rocket'];
+
+                                paymentMethods.forEach(method => {
+                                    document.getElementById(method).addEventListener("change", function() {
+                                        paymentMethods.forEach(m => {
+                                            const infoSection = document.getElementById(`${m}_info`);
+                                            if (infoSection) {
+                                                infoSection.style.display = (m === method && this.checked) ? "block" : "none";
+                                            }
+                                        });
+                                    });
                                 });
                             </script>
+
+
+
+
+
+
+
+
 
 
 
