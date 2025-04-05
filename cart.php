@@ -129,16 +129,16 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                             </div>
                             <div class="d-flex justify-content-between mb-2">
                                 <span>Shipping:</span>
-                                <span>$5.00</span>
+                                <span>৳50.00</span>
                             </div>
                             <div class="d-flex justify-content-between mb-3">
                                 <span>Tax:</span>
-                                <span>$<?php echo number_format($total * 0.1, 2); ?></span>
+                                <span>৳<?php echo number_format($total * 0.1, 2); ?></span>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between fw-bold mb-4">
                                 <span>Total:</span>
-                                <span>$<?php echo number_format($total + 5 + ($total * 0.1), 2); ?></span>
+                                <span>৳<?php echo number_format($total + 5 + ($total * 0.1), 2); ?></span>
                             </div>
                             <a href="checkout.php" class="btn btn-primary w-100">Proceed to Checkout</a>
                             <a href="products.php" class="btn btn-outline-secondary w-100 mt-2">Continue Shopping</a>
