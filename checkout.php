@@ -306,7 +306,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </div>
                             </div>
 
-
+                           <!-- script Bkash,Nagad,Rocket -->
                             <script>
                                 const paymentMethods = ['credit_card', 'bkash', 'nagad', 'rocket'];
 
