@@ -58,7 +58,7 @@ $orders = $stmt->fetchAll();
                                 <td>#<?php echo $order['id']; ?></td>
                                 <td><?php echo date('M j, Y', strtotime($order['created_at'])); ?></td>
                                 <td><?php echo $item_count; ?> item<?php echo $item_count !== 1 ? 's' : ''; ?></td>
-                                <td>$<?php echo number_format($order['total_amount'], 2); ?></td>
+                                <td>৳<?php echo number_format($order['total_amount'], 2); ?></td>
                                 <td>
                                     <span class="badge 
                                         <?php echo $order['status'] === 'delivered' ? 'bg-success' : 
