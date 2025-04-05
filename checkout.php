@@ -300,27 +300,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         ?>
                             <div class="d-flex justify-content-between mb-2">
                                 <span><?php echo htmlspecialchars($product['name']); ?> × <?php echo $quantity; ?></span>
-                                <span>$<?php echo number_format($subtotal, 2); ?></span>
+                                <span>৳<?php echo number_format($subtotal, 2); ?></span>
                             </div>
                         <?php endforeach; ?>
 
                         <hr>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Subtotal:</span>
-                            <span>$<?php echo number_format($total, 2); ?></span>
+                            <span>৳<?php echo number_format($total, 2); ?></span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Shipping:</span>
-                            <span>$5.00</span>
+                            <span>৳50.00</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Tax (10%):</span>
-                            <span>$<?php echo number_format($total * 0.1, 2); ?></span>
+                            <span>৳<?php echo number_format($total * 0.1, 2); ?></span>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between fw-bold">
                             <span>Total:</span>
-                            <span>$<?php echo number_format($total + 5 + ($total * 0.1), 2); ?></span>
+                            <span>৳<?php echo number_format($total + 5 + ($total * 0.1), 2); ?></span>
                         </div>
                     </div>
                 </div>
