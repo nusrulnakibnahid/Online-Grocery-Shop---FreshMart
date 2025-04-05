@@ -104,7 +104,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                                                                 data-action="increase">+</button>
                                                     </div>
                                                 </td>
-                                                <td>$<?php echo number_format($item['subtotal'], 2); ?></td>
+                                                <td>৳ <?php echo number_format($item['subtotal'], 2); ?></td>
                                                 <td>
                                                     <button class="btn btn-danger btn-sm remove-item" 
                                                             data-product-id="<?php echo $item['id']; ?>">
@@ -125,7 +125,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                             <h5 class="card-title">Order Summary</h5>
                             <div class="d-flex justify-content-between mb-2">
                                 <span>Subtotal:</span>
-                                <span>$<?php echo number_format($total, 2); ?></span>
+                                <span>৳<?php echo number_format($total, 2); ?></span>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
                                 <span>Shipping:</span>
