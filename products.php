@@ -63,7 +63,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo htmlspecialchars($product['name']); ?></h5>
                                 <p class="card-text"><?php echo htmlspecialchars($product['description']); ?></p>
-                                <p class="product-price">৳<?php echo number_format($product['price'] * 10 * 10, 2); ?></p>
+                                <p class="product-price">৳ <?php echo number_format($product['price'] * 110 * 110, 2); ?></p>
                                 <div class="quantity-control mb-3">
                                     <label for="quantity-<?php echo $product['product_id']; ?>" class="form-label">Quantity:</label>
                                     <input type="number" class="form-control" id="quantity-<?php echo $product['product_id']; ?>" value="1" min="1" max="<?php echo $product['stock_quantity']; ?>">

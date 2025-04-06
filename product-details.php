@@ -43,6 +43,7 @@ $page_title = $product ? htmlspecialchars($product['name']) . ' - FreshMart' : '
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_title; ?></title>
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3aAAKqYeAJ85UjxrgA4ZiQtpaDju-UTez55LckWFBFu9_VpSMWFClskEprIv-x8S-L3U&usqp=CAU">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -127,7 +128,7 @@ $page_title = $product ? htmlspecialchars($product['name']) . ' - FreshMart' : '
                         <h2><?php echo htmlspecialchars($product['name']); ?></h2>
                         <p class="text-muted">Category: <?php echo ucfirst(htmlspecialchars($product['category'])); ?></p>
                         <div class="mb-3">
-                            <span class="h4 text-success">৳<?php echo number_format($product['price'] * 10 *10, 2); ?></span>
+                            <span class="h4 text-success">৳ <?php echo number_format($product['price'] * 10 *10, 2); ?></span>
                             <?php if ($product['stock_quantity'] > 0): ?>
                                 <span class="badge bg-success ms-2">In Stock</span>
                             <?php else: ?>
