@@ -88,7 +88,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>$<?php echo number_format($item['price'], 2); ?></td>
+                                                <td>৳ <?php echo number_format($item['price'], 2); ?></td>
                                                 <td>
                                                     <div class="input-group" style="width: 120px;">
                                                         <button class="btn btn-outline-secondary update-quantity" 

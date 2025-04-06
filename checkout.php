@@ -204,7 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-                           <!-- Credit Card -->
+                            <!-- Credit Card -->
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="payment_method" id="credit_card" value="credit_card">
                                 <label class="form-check-label d-flex align-items-center" for="credit_card">
@@ -229,16 +229,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </div>
                             </div>
 
-                            <script>
-                                // JavaScript to show and hide card details input fields
-                                document.getElementById("credit_card").addEventListener("change", function() {
-                                    document.getElementById("credit_card_info").style.display = this.checked ? "block" : "none";
-                                });
-                            </script>
+                           
 
 
 
-                             <!-- Bkash -->
+                            <!-- Bkash -->
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="payment_method" id="bkash" value="bkash">
                                 <label class="form-check-label d-flex align-items-center" for="bkash">
@@ -249,64 +244,79 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             <!-- Additional fields for Bkash Payment -->
                             <div id="bkash_info" class="mt-3 mb-5" style="display: none;">
+                                <div class="alert alert-info mb-3">
+                                    Please send payment to this number: <strong>01612605228</strong>
+                                </div>
                                 <div class="form-group mb-3">
-                                    <label for="phone_number">Phone Number</label>
+                                    <label for="phone_number">Your Bkash Number</label>
                                     <input type="tel" class="form-control" id="phone_number" placeholder="Enter your Bkash phone number" pattern="[0-9]{11}" required>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="total_payment">Total Payment</label>
                                     <input type="number" class="form-control" id="total_payment" placeholder="Enter total amount" required>
                                 </div>
+                                <div class="form-group mb-3">
+                                    <label for="bkash_txn">Transaction ID</label>
+                                    <input type="text" class="form-control" id="bkash_txn" placeholder="Enter Transaction ID" required>
+                                </div>
                             </div>
 
-
-
-                           <!-- Nagad -->
+                            <!-- Nagad -->
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="payment_method" id="nagad" value="nagad">
                                 <label class="form-check-label d-flex align-items-center" for="nagad">
-                                    <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" alt="Nagad Logo" style="height: 35px; margin-right: 8px;">
+                                    <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" alt="Nagad Logo" style="height: 45px; margin-right: 8px;">
                                     Nagad
                                 </label>
                             </div>
 
                             <!-- Additional fields for Nagad Payment -->
                             <div id="nagad_info" class="mt-3 mb-5" style="display: none;">
+                                <div class="alert alert-info mb-3">
+                                    Please send payment to this number: <strong>01612605228</strong>
+                                </div>
                                 <div class="form-group mb-3">
-                                    <label for="nagad_phone">Phone Number</label>
+                                    <label for="nagad_phone">Your Nagad Number</label>
                                     <input type="tel" class="form-control" id="nagad_phone" placeholder="Enter your Nagad phone number" pattern="[0-9]{11}" required>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="nagad_amount">Total Payment</label>
                                     <input type="number" class="form-control" id="nagad_amount" placeholder="Enter total amount" required>
                                 </div>
+                                <div class="form-group mb-3">
+                                    <label for="nagad_txn">Transaction ID</label>
+                                    <input type="text" class="form-control" id="nagad_txn" placeholder="Enter Transaction ID" required>
+                                </div>
                             </div>
 
-
-
-
-                           <!-- Rocket -->
+                            <!-- Rocket -->
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="payment_method" id="rocket" value="rocket">
                                 <label class="form-check-label d-flex align-items-center" for="rocket">
-                                    <img src="https://images.seeklogo.com/logo-png/31/1/dutch-bangla-rocket-logo-png_seeklogo-317692.png" alt="Rocket Logo" style="height: 35px; margin-right: 8px;">
+                                    <img src="https://images.seeklogo.com/logo-png/31/1/dutch-bangla-rocket-logo-png_seeklogo-317692.png" alt="Rocket Logo" style="height: 45px; margin-right: 8px;">
                                     Rocket
                                 </label>
                             </div>
 
                             <!-- Additional fields for Rocket Payment -->
                             <div id="rocket_info" class="mt-3 mb-5" style="display: none;">
+                                <div class="alert alert-info mb-3">
+                                    Please send payment to this number: <strong>01612605228</strong>
+                                </div>
                                 <div class="form-group mb-3">
-                                    <label for="rocket_phone">Phone Number</label>
+                                    <label for="rocket_phone">Your Rocket Number</label>
                                     <input type="tel" class="form-control" id="rocket_phone" placeholder="Enter your Rocket phone number" pattern="[0-9]{11}" required>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="rocket_amount">Total Payment</label>
                                     <input type="number" class="form-control" id="rocket_amount" placeholder="Enter total amount" required>
                                 </div>
+                                <div class="form-group mb-3">
+                                    <label for="rocket_txn">Transaction ID</label>
+                                    <input type="text" class="form-control" id="rocket_txn" placeholder="Enter Transaction ID" required>
+                                </div>
                             </div>
 
-                           <!-- script Bkash,Nagad,Rocket -->
                             <script>
                                 const paymentMethods = ['credit_card', 'bkash', 'nagad', 'rocket'];
 
@@ -321,6 +331,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     });
                                 });
                             </script>
+
 
 
 

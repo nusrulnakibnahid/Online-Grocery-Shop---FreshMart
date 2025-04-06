@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - FreshMart</title>
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3aAAKqYeAJ85UjxrgA4ZiQtpaDju-UTez55LckWFBFu9_VpSMWFClskEprIv-x8S-L3U&usqp=CAU">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Custom CSS -->
@@ -63,7 +64,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo htmlspecialchars($product['name']); ?></h5>
                                 <p class="card-text"><?php echo htmlspecialchars($product['description']); ?></p>
-                                <p class="product-price">৳ <?php echo number_format($product['price'] * 110 * 110, 2); ?></p>
+                                <p class="product-price">৳ <?php echo number_format($product['price'] * 10 * 10, 2); ?></p>
                                 <div class="quantity-control mb-3">
                                     <label for="quantity-<?php echo $product['product_id']; ?>" class="form-label">Quantity:</label>
                                     <input type="number" class="form-control" id="quantity-<?php echo $product['product_id']; ?>" value="1" min="1" max="<?php echo $product['stock_quantity']; ?>">

@@ -27,7 +27,7 @@
                         <img src="assets/images/banner1.jpg" class="d-block w-100" alt="Fresh Groceries">
                         <div class="carousel-caption d-none d-md-block">
                             <h1>Fresh Groceries Delivered to Your Doorstep</h1>
-                            <p>Get fresh and organic products at affordable prices</p>
+                            <p>তাজা ও অর্গানিক পণ্য সহজ মূল্যে এখন হাতের নাগালে!</p>
                             <a href="products.php" class="btn btn-success btn-lg">Shop Now</a>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         <img src="assets/images/banner2.jpg" class="d-block w-100" alt="Special Offers">
                         <div class="carousel-caption d-none d-md-block">
                             <h1>Special Offers Every Day</h1>
-                            <p>Save big on your favorite items</p>
+                            <p>প্রিয় পণ্যে সাশ্রয় করুন আরও বেশি!</p>
                             <a href="products.php" class="btn btn-success btn-lg">View Offers</a>
                         </div>
                     </div>
