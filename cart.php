@@ -25,13 +25,13 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
         $cart_items[] = [
             'id' => $product['product_id'],
             'name' => $product['name'],
-            'price' => $product['price'] * 10,
+            'price' => $product['price'] * 110,
             'image' => $product['photo_url'],
             'quantity' => $cart_item['quantity'],
             'stock' => $product['stock_quantity'],
-            'subtotal' => $product['price'] * 10 * $cart_item['quantity']
+            'subtotal' => $product['price'] * 110 * $cart_item['quantity']
         ];
-        $total += $product['price'] * 10 * $cart_item['quantity'];
+        $total += $product['price'] * 110 * $cart_item['quantity'];
     }
 }
 ?>
@@ -141,8 +141,8 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                                 <span>Total:</span>
                                 <span>৳<?php echo number_format($total + 5 + ($total * 0.1), 2); ?></span>
                             </div>
-                            <a href="checkout.php" class="btn btn-primary w-100">Proceed to Checkout</a>
-                            <a href="products.php" class="btn btn-outline-secondary w-100 mt-2">Continue Shopping</a>
+                            <a href="checkout.php" class="btn btn-primary w-1100">Proceed to Checkout</a>
+                            <a href="products.php" class="btn btn-outline-secondary w-1100 mt-2">Continue Shopping</a>
                         </div>
                     </div>
                 </div>
