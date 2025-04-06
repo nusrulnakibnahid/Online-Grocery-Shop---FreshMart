@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,7 +90,7 @@
                 if (count($result) > 0) {
                     $counter = 1;
                     foreach ($result as $row) {
-                        $price_in_taka = $row['price'] * 110;
+                        $price_in_taka = $row['price'] * 10;
                         
                         echo '<div class="col-md-4 mb-4">
                                 <div class="card product-card">
@@ -123,7 +122,7 @@
                 if ($result->rowCount() > 0) {
                     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                         $discount = rand(10, 25);
-                        $original_price = $row['price'] * 110;
+                        $original_price = $row['price'] * 10;
                         $discounted_price = $original_price * (1 - ($discount/100));
                         
                         echo '<div class="col-md-4 mb-4">

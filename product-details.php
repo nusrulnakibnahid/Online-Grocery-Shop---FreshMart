@@ -127,7 +127,7 @@ $page_title = $product ? htmlspecialchars($product['name']) . ' - FreshMart' : '
                         <h2><?php echo htmlspecialchars($product['name']); ?></h2>
                         <p class="text-muted">Category: <?php echo ucfirst(htmlspecialchars($product['category'])); ?></p>
                         <div class="mb-3">
-                            <span class="h4 text-success">৳<?php echo number_format($product['price'] * 110 *110, 2); ?></span>
+                            <span class="h4 text-success">৳<?php echo number_format($product['price'] * 10 *10, 2); ?></span>
                             <?php if ($product['stock_quantity'] > 0): ?>
                                 <span class="badge bg-success ms-2">In Stock</span>
                             <?php else: ?>
@@ -146,7 +146,7 @@ $page_title = $product ? htmlspecialchars($product['name']) . ' - FreshMart' : '
                                 </div>
                                 <input type="hidden" id="product-id" value="<?php echo $product['product_id']; ?>">
                                 <input type="hidden" id="product-name" value="<?php echo htmlspecialchars($product['name']); ?>">
-                                <input type="hidden" id="product-price" value="<?php echo number_format($product['price'] * 110 * 110, 2); ?>">
+                                <input type="hidden" id="product-price" value="<?php echo number_format($product['price'] * 10 * 10, 2); ?>">
                                 <input type="hidden" id="product-image" value="<?php echo htmlspecialchars($product['photo_url']); ?>">
                                 
                                 <button type="button" class="btn btn-primary btn-lg" id="add-to-cart-btn">
@@ -162,7 +162,7 @@ $page_title = $product ? htmlspecialchars($product['name']) . ' - FreshMart' : '
                             <ul>
                                 <li>Category: <?php echo ucfirst(htmlspecialchars($product['category'])); ?></li>
                                 <li>Available Quantity: <?php echo $product['stock_quantity']; ?></li>
-                                <li>Price: ৳<?php echo number_format($product['price'] * 110 * 110, 2); ?></li>
+                                <li>Price: ৳<?php echo number_format($product['price'] * 10 * 10, 2); ?></li>
                             </ul>
                         </div>
                     </div>

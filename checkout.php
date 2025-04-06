@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($products as $product) {
-                $total += $product['price'] * 110 * $_SESSION['cart'][$product['product_id']]['quantity'];
+                $total += $product['price'] * 10 * $_SESSION['cart'][$product['product_id']]['quantity'];
             }
 
             $shipping = 5.00;
@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $order_id,
                     $product['product_id'],
                     $_SESSION['cart'][$product['product_id']]['quantity'],
-                    $product['price'] * 110
+                    $product['price'] * 10
                 ]);
 
                 $stmt = $pdo->prepare("UPDATE products SET stock_quantity = stock_quantity - ? WHERE product_id = ?");
@@ -354,7 +354,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         foreach ($products as $product):
                             $quantity = $_SESSION['cart'][$product['product_id']]['quantity'];
-                            $subtotal = $product['price'] * 110 * $quantity;
+                            $subtotal = $product['price'] * 10 * $quantity;
                             $total += $subtotal;
                         ?>
                             <div class="d-flex justify-content-between mb-2">
