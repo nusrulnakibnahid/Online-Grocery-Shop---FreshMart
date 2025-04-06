@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body text-center">
-                        <img src="assets/images/default-avatar.png" alt="Profile Picture" class="img-fluid rounded-circle mb-3" width="150">
+                        <img src="https://icones.pro/wp-content/uploads/2021/05/symbole-de-l-homme-vert.png" alt="Profile Picture" class="img-fluid rounded-circle mb-3" width="150">
                         <h4><?php echo htmlspecialchars($user['first_name'] . ' ' . $user['last_name']); ?></h4>
                         <p class="text-muted">Member since <?php echo date('M Y', strtotime($user['created_at'])); ?></p>
                         
