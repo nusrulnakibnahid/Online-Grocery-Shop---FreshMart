@@ -41,13 +41,9 @@
 
 ## 🖼️ UI Preview
 
-> *(Add image links after uploading to GitHub or Imgur)*
+![localhost_3000_index php (1)](https://github.com/user-attachments/assets/27b5e889-8767-4f26-97fa-f5c24b25d657)
 
-<p align="center">
-  <img src="https://your-link.com/home-preview.png" alt="Home Page" width="700"/>
-  <img src="https://your-link.com/cart-preview.png" alt="Cart Page" width="700"/>
-  <img src="https://your-link.com/admin-preview.png" alt="Admin Panel" width="700"/>
-</p>
+
 
 ---
 
