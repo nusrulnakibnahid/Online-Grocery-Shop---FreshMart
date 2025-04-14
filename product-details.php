@@ -291,7 +291,7 @@ document.getElementById('add-to-cart-btn')?.addEventListener('click', function()
             }
             
             // Show success message
-            alert('Product added to cart successfully!');
+            alert('Go to cart');
         } else {
             if (data.redirect) {
                 window.location.href = data.redirect;
