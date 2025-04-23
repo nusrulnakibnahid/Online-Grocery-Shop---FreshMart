@@ -1,9 +1,7 @@
-<!-- HEADER -->
-<h1 align="center">
-  🛒 FreshMart – Online Grocery Shop
-</h1>
+<h1 align="center">🛒 FreshMart – Online Grocery Shop</h1>
+
 <p align="center">
-  <strong>A complete online grocery store solution built using PHP, MySQL, JS & Bootstrap</strong><br/>
+  <b>A complete online grocery store solution built with PHP, MySQL, JS & Bootstrap</b><br/>
   ✨ Shop Fresh | Manage Smart | Deliver Fast ✨
 </p>
 
@@ -16,140 +14,134 @@
 
 ---
 
-## 📖 About the Project
+## 📖 Project Overview
 
-**FreshMart** is a simple yet powerful online grocery store platform that allows customers to explore grocery items, add them to a cart, place orders, and track their purchases. The admin panel provides features to manage products, categories, orders, users, and reports — all from a clean, user-friendly interface.
+**FreshMart** is a user-friendly and feature-rich online grocery store application. It allows users to browse groceries, add them to their cart, and place orders. On the other side, admins can manage products, users, and monitor orders through a dedicated panel.
+
+This project was built as part of our academic coursework to demonstrate web development skills using PHP and MySQL on the backend, and Bootstrap, HTML, CSS, JS on the frontend.
 
 ---
 
-## Team Members: 
-- Md.Nusrul Nakib Nahid (ID: 221-35-1054)
-- Umma Mafia Rupanti (ID: 221-35-978)
-- Mesia Jahan Arfa (ID: 221-35-1023)
-- Md. Rakib Mia (ID: 212-35-758)
+---
+
+## 🎥 Watch the Full Project Demo
+
+👉 <a href="https://drive.google.com/file/d/13afpjcnB9Y_kOnIz7ij7ebJTsz2j8m5P/view?usp=sharing" target="_blank" style="font-size: 18px; font-weight: bold; color: #0d6efd; text-decoration: none;">Click Here to Watch 📽️</a>
+
+✨ A complete walkthrough of all features:  
+✔️ Admin Panel  
+✔️ User Panel  
+✔️ Live interactions & product flow
+
+---
+
+
+---
+
+## 👨‍👩‍👧‍👦 Team Members
+
+| Name                     | Student ID     |
+|--------------------------|----------------|
+| Md. Nusrul Nakib Nahid   | 221-35-1054    |
+| Umma Mafia Rupanti       | 221-35-978     |
+| Mesia Jahan Arfa         | 221-35-1023    |
+| Md. Rakib Mia            | 212-35-758     |
+
+---
 
 ## 🌟 Key Features
 
 ### 🧑‍💼 User Panel
-- 🛒 Browse & search products with categories
+- 🛒 Browse and search for groceries
 - ➕ Add to cart, update quantity, remove items
-- ✅ Checkout & order confirmation
-- 🔐 Login, Register, and Logout
-- 👤 Manage profile and order history
+- ✅ Checkout and order confirmation
+- 🔐 Secure login, registration & logout
+- 👤 View profile and order history
 
 ### 🛠️ Admin Panel
-- 📦 Manage products, categories, and discounts
-- 👥 View and manage users
-- 📑 View orders and their details
-- 📊 Access reports and dashboards
+- 📦 Manage products, categories & discounts
+- 🧑 View & manage customers
+- 🧾 Handle orders and order status
+- 📊 Dashboard with order statistics & revenue
 
 ---
 
-## 🖼️ UI Preview
+## 🖼️ User Interface Preview
 
-![localhost_3000_index php (1)](https://github.com/user-attachments/assets/27b5e889-8767-4f26-97fa-f5c24b25d657)
+> 📌 Homepage UI:
 
-
+![FreshMart UI Screenshot](https://github.com/user-attachments/assets/27b5e889-8767-4f26-97fa-f5c24b25d657)
 
 ---
 
-## 📁 Project Structure
+## 🗂️ Project Folder Structure
 
-```
+> 📁 Here's the structure for better understanding:
+
+### Folder Structure
+
+```bash
 📦 Online-Grocery-Shop---FreshMart
-├── admin/                  → Admin Panel Pages
-├── api/                    → Cart APIs (add, remove, update, cancel)
+├── admin/
+│   ├── dashboard.php
+│   ├── manage-products.php
+│   └── ...
+├── api/
+│   └── cart-functions.php
 ├── assets/
-│   ├── css/                → Stylesheets
-│   ├── js/                 → Scripts
-│   └── images/             → UI/UX assets
-├── includes/               → DB configs & reusable PHP
+│   ├── css/
+│   ├── js/
+│   └── images/
+├── includes/
+│   ├── db_connect.php
+│   └── functions.php
 ├── cart.php
 ├── checkout.php
-├── grocery_shop.sql        → MySQL DB dump
 ├── index.php
 ├── login.php / logout.php
+├── register.php
 ├── profile.php
 ├── orders.php
-├── register.php
-└── ...and more
-```
+└── grocery_shop.sql
 
----
+
 
 ## 🧰 Tech Stack
 
-| Technology     | Role                          |
-|----------------|-------------------------------|
-| 🐘 PHP         | Backend scripting              |
-| 🛢 MySQL       | Database                       |
-| 🎨 HTML/CSS    | Markup and styling             |
-| ⚙️ Bootstrap   | Responsive design              |
-| 🔁 JavaScript  | Frontend interaction           |
-| 💡 Axios       | API requests (optional)        |
+| Tech         | Description                    |
+|--------------|--------------------------------|
+| 🐘 PHP       | Backend scripting              |
+| 🛢 MySQL     | Database                       |
+| 🎨 HTML/CSS  | Layout & styling               |
+| ⚙️ Bootstrap | Frontend framework             |
+| 🔁 JavaScript| Client-side logic              |
+| 📡 Axios     | API data fetching (optional)   |
 
 ---
 
 ## ⚙️ Getting Started
 
-### 🔧 Requirements
-- [XAMPP](https://www.apachefriends.org/)
-- PHP 7.0 or higher
-- MySQL / phpMyAdmin
+### 📦 Requirements
 
-### 🚀 Setup Instructions
+- ✅ XAMPP / LAMP / MAMP
+- ✅ PHP 7.x or higher
+- ✅ MySQL Server
+
+---
+
+### 🛠️ Installation
 
 ```bash
-# 1. Clone the repository
+# Clone the repository
 git clone https://github.com/nusrulnakibnahid/Online-Grocery-Shop---FreshMart.git
 
-# 2. Move project to XAMPP htdocs directory
+# Move to htdocs (for XAMPP)
 mv Online-Grocery-Shop---FreshMart /xampp/htdocs/
 
-# 3. Import the database
-# - Open phpMyAdmin
-# - Create DB named freshmart
-# - Import grocery_shop.sql
+# Import the database
+# 1. Open phpMyAdmin
+# 2. Create a DB named freshmart
+# 3. Import grocery_shop.sql file
 
-# 4. Run the project in your browser
+# Access the project
 http://localhost/Online-Grocery-Shop---FreshMart/
-```
-
----
-
-## 🔐 Admin Login Info
-
-Use the following default credentials to access the admin panel:
-
-```bash
-📧 Email:    nahid@gmail.com
-🔑 Password: nahid1054
-```
-
-You can change them directly in the `users` table of your database.
-
----
-
-## 🎯 Future Improvements
-
-- 🔍 Product search & filter with live suggestions
-- 🛎️ Notification system for orders
-- 💬 User feedback & ratings
-- 📦 Inventory tracking system
-- 🌐 Multi-language support
-- 📱 Mobile responsive PWA support
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! 🚀
-
-1. Fork the project
-2. Create your branch: `git checkout -b feature/YourFeature`
-3. Commit changes: `git commit -m 'Add your message'`
-4. Push to the branch: `git push origin feature/YourFeature`
-5. Create a Pull Request
-
----
-
