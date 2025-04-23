@@ -128,7 +128,7 @@ $page_title = $product ? htmlspecialchars($product['name']) . ' - FreshMart' : '
                         <h2><?php echo htmlspecialchars($product['name']); ?></h2>
                         <p class="text-muted">Category: <?php echo ucfirst(htmlspecialchars($product['category'])); ?></p>
                         <div class="mb-3">
-                            <span class="h4 text-success">৳ <?php echo number_format($product['price'] * 10 *10, 2); ?></span>
+                            <span class="h4 text-success">৳ <?php echo number_format($product['price'] * 10, 2); ?></span>
                             <?php if ($product['stock_quantity'] > 0): ?>
                                 <span class="badge bg-success ms-2">In Stock</span>
                             <?php else: ?>

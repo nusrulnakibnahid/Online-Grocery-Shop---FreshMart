@@ -25,15 +25,16 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
         $cart_items[] = [
             'id' => $product['product_id'],
             'name' => $product['name'],
-            'price' => $product['price'] * 110,
+            'price' => $product['price'] * 10,
             'image' => $product['photo_url'],
             'quantity' => $cart_item['quantity'],
             'stock' => $product['stock_quantity'],
-            'subtotal' => $product['price'] * 110 * $cart_item['quantity']
+            'subtotal' => $product['price'] * 10 * $cart_item['quantity']
         ];
-        $total += $product['price'] * 110 * $cart_item['quantity'];
+        $total += $product['price'] * 10 * $cart_item['quantity'];
     }
 }
+
 ?>
 
 <!DOCTYPE html>

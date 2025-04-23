@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $total += $product['price'] * 10 * $_SESSION['cart'][$product['product_id']]['quantity'];
             }
 
-            $shipping = 5.00;
+            $shipping = 50.00;
             $tax = $total * 0.1;
             $grand_total = $total + $shipping + $tax;
 
@@ -187,14 +187,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label">Shipping Address</label>
-                                <textarea class="form-control" id="address" name="address" rows="3" required>
-                            <?php
-                            echo htmlspecialchars($_POST['address'] ?? $user['address'] ?? '');
-                            ?></textarea>
+                                <textarea class="form-control" id="address" name="address" rows="3" required><?php
+                                    echo htmlspecialchars($_POST['address'] ?? $user['address'] ?? '');
+                                ?></textarea>
                             </div>
 
-
                             <h5 class="mt-4">Payment Method</h5>
+                            
+                            <!-- Cash on Delivery -->
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="payment_method" id="cod" value="cod" checked>
                                 <label class="form-check-label d-flex align-items-center" for="cod">
@@ -202,8 +202,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     Cash on Delivery (COD)
                                 </label>
                             </div>
-
-
 
                             <!-- Credit Card -->
                             <div class="form-check mb-4">
@@ -230,10 +228,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </div>
                             </div>
 
-                           
-
-
-
                             <!-- Bkash -->
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="payment_method" id="bkash" value="bkash">
@@ -249,16 +243,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     Please send payment to this number: <strong>01612605228</strong>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label for="phone_number">Your Bkash Number</label>
-                                    <input type="tel" class="form-control" id="phone_number" placeholder="Enter your Bkash phone number" pattern="[0-9]{11}" required>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="total_payment">Total Payment</label>
-                                    <input type="number" class="form-control" id="total_payment" placeholder="Enter total amount" required>
+                                    <label for="bkash_phone">Your Bkash Number</label>
+                                    <input type="tel" class="form-control" id="bkash_phone" name="bkash_phone" placeholder="Enter your Bkash phone number" pattern="[0-9]{11}">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="bkash_txn">Transaction ID</label>
-                                    <input type="text" class="form-control" id="bkash_txn" placeholder="Enter Transaction ID" required>
+                                    <input type="text" class="form-control" id="bkash_txn" name="bkash_txn" placeholder="Enter Transaction ID">
                                 </div>
                             </div>
 
@@ -278,15 +268,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="nagad_phone">Your Nagad Number</label>
-                                    <input type="tel" class="form-control" id="nagad_phone" placeholder="Enter your Nagad phone number" pattern="[0-9]{11}" required>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="nagad_amount">Total Payment</label>
-                                    <input type="number" class="form-control" id="nagad_amount" placeholder="Enter total amount" required>
+                                    <input type="tel" class="form-control" id="nagad_phone" name="nagad_phone" placeholder="Enter your Nagad phone number" pattern="[0-9]{11}">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="nagad_txn">Transaction ID</label>
-                                    <input type="text" class="form-control" id="nagad_txn" placeholder="Enter Transaction ID" required>
+                                    <input type="text" class="form-control" id="nagad_txn" name="nagad_txn" placeholder="Enter Transaction ID">
                                 </div>
                             </div>
 
@@ -302,19 +288,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <!-- Additional fields for Rocket Payment -->
                             <div id="rocket_info" class="mt-3 mb-5" style="display: none;">
                                 <div class="alert alert-info mb-3">
-                                    Please send payment to this number: <strong>01612605228</strong>
+                                    Please send payment to this number: <strong>+8801612605228</strong>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="rocket_phone">Your Rocket Number</label>
-                                    <input type="tel" class="form-control" id="rocket_phone" placeholder="Enter your Rocket phone number" pattern="[0-9]{11}" required>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="rocket_amount">Total Payment</label>
-                                    <input type="number" class="form-control" id="rocket_amount" placeholder="Enter total amount" required>
+                                    <input type="tel" class="form-control" id="rocket_phone" name="rocket_phone" placeholder="Enter your Rocket phone number" pattern="[0-9]{11}">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="rocket_txn">Transaction ID</label>
-                                    <input type="text" class="form-control" id="rocket_txn" placeholder="Enter Transaction ID" required>
+                                    <input type="text" class="form-control" id="rocket_txn" name="rocket_txn" placeholder="Enter Transaction ID">
                                 </div>
                             </div>
 
@@ -332,8 +314,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     });
                                 });
                             </script>
-
-
 
                             <button type="submit" class="btn btn-primary w-100">Place Order</button>
                         </form>
@@ -382,7 +362,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <hr>
                         <div class="d-flex justify-content-between fw-bold">
                             <span>Total:</span>
-                            <span>৳<?php echo number_format($total + 5 + ($total * 0.1), 2); ?></span>
+                            <span>৳<?php echo number_format($total + 50 + ($total * 0.1), 2); ?></span>
                         </div>
                     </div>
                 </div>

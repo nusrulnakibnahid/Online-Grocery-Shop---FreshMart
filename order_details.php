@@ -63,7 +63,7 @@ $order_items = $stmt->fetchAll();
                             <?php echo ucfirst($order['status']); ?>
                         </span></p>
                         <p><strong>Payment Method:</strong> <?php echo strtoupper($order['payment_method']); ?></p>
-                        <p><strong>Total Amount:</strong> $<?php echo number_format($order['total_amount'], 2); ?></p>
+                        <p><strong>Total Amount:</strong>৳<?php echo number_format($order['total_amount'], 2); ?></p>
                     </div>
                     <div class="col-md-6">
                         <h4>Shipping Address</h4>
