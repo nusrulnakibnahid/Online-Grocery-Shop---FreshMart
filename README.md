@@ -71,7 +71,8 @@ This project was built as part of our academic coursework to demonstrate web dev
 
 > 📌 Homepage UI:
 
-![FreshMart UI Screenshot](https://github.com/user-attachments/assets/27b5e889-8767-4f26-97fa-f5c24b25d657)
+![localhost_3000_index php (3)](https://github.com/user-attachments/assets/354ea363-2138-41ab-891b-ab1ee1e9cf71)
+
 
 ---
 
