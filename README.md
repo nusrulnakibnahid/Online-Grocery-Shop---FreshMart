@@ -38,14 +38,15 @@ This project was built as part of our academic coursework to demonstrate web dev
 
 ---
 
-## 👨‍👩‍👧‍👦 Team Members
+# 👨‍👩‍👧‍👦 Team Members
 
-| Name                     | Student ID     |
-|--------------------------|----------------|
-| Md. Nusrul Nakib Nahid   | 221-35-1054    |
-| Umma Mafia Rupanti       | 221-35-978     |
-| Mesia Jahan Arfa         | 221-35-1023    |
-| Md. Rakib Mia            | 212-35-758     |
+| Name                     | Student ID     | Department           | University                      |
+|--------------------------|----------------|----------------------|---------------------------------|
+| Md. Nusrul Nakib Nahid   | 221-35-1054    | Software Engineering | Daffodil International University |
+| Umma Mafia Rupanti       | 221-35-978     | Software Engineering | Daffodil International University |
+| Mesia Jahan Arfa         | 221-35-1023    | Software Engineering | Daffodil International University |
+| Md. Rakib Mia            | 212-35-758     | Software Engineering | Daffodil International University |
+
 
 ---
 
