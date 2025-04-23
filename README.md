@@ -6,9 +6,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/languages/top/yourusername/Online-Grocery-Shop---FreshMart?style=for-the-badge" alt="Top Language" />
-  <img src="https://img.shields.io/github/repo-size/yourusername/Online-Grocery-Shop---FreshMart?style=for-the-badge" alt="Repo Size" />
-  <img src="https://img.shields.io/github/license/yourusername/Online-Grocery-Shop---FreshMart?style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/github/languages/top/nusrulnakibnahid/Online-Grocery-Shop---FreshMart?style=for-the-badge" alt="Top Language" />
+  <img src="https://img.shields.io/github/repo-size/nusrulnakibnahid/Online-Grocery-Shop---FreshMart?style=for-the-badge" alt="Repo Size" />
+  <img src="https://img.shields.io/github/license/nusrulnakibnahid/Online-Grocery-Shop---FreshMart?style=for-the-badge" alt="License" />
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" alt="Status" />
 </p>
 
@@ -145,5 +145,3 @@ mv Online-Grocery-Shop---FreshMart /xampp/htdocs/
 # 2. Create a DB named freshmart
 # 3. Import grocery_shop.sql file
 
-# Access the project
-http://localhost/Online-Grocery-Shop---FreshMart/
