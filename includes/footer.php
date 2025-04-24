@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h5>FreshMart</h5>
-                <p>Your one-stop shop for fresh groceries and household essentials.</p>
+            <h5>FreshMart</h5>
+            <p>তাজা মুদিসামগ্রী এবং গৃহস্থালির প্রয়োজনীয় জিনিসপত্রের জন্য আপনার একমাত্র গন্তব্য।</p>
             </div>
             <div class="col-md-3">
                 <h5>Quick Links</h5>

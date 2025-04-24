@@ -1,57 +1,73 @@
 <?php
-require_once 'includes/db_connection.php';
-require_once 'includes/functions.php';
+require_once '../includes/db_connection.php';
+require_once '../includes/functions.php';
 
+// Start session
 session_start();
-header('Content-Type: application/json');
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    echo json_encode(['success' => false, 'message' => 'Please login to cancel order']);
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Unauthorized access']);
     exit;
 }
 
-// Check if request is POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo json_encode(['success' => false, 'message' => 'Invalid request method']);
+// Get order ID from POST data
+$order_id = isset($_POST['order_id']) ? intval($_POST['order_id']) : 0;
+
+if ($order_id <= 0) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Invalid order ID']);
     exit;
 }
-
-// Get input data
-$input = json_decode(file_get_contents('php://input'), true);
-
-// Validate input
-if (!isset($input['order_id'])) {
-    echo json_encode(['success' => false, 'message' => 'Missing order ID']);
-    exit;
-}
-
-$order_id = intval($input['order_id']);
 
 try {
-    // Check if order belongs to user and is cancellable
-    $stmt = $pdo->prepare("SELECT id, status FROM orders WHERE id = ? AND user_id = ?");
+    // Begin transaction
+    $pdo->beginTransaction();
+    
+    // 1. Verify the order belongs to the user and is pending
+    $stmt = $pdo->prepare("SELECT * FROM orders WHERE id = ? AND user_id = ? AND status = 'pending' FOR UPDATE");
     $stmt->execute([$order_id, $_SESSION['user_id']]);
     $order = $stmt->fetch();
-
+    
     if (!$order) {
-        echo json_encode(['success' => false, 'message' => 'Order not found']);
+        $pdo->rollBack();
+        header('Content-Type: application/json');
+        echo json_encode(['success' => false, 'message' => 'Order not found, already processed, or you dont have permission']);
         exit;
     }
-
-    if (!in_array($order['status'], ['pending', 'processing'])) {
-        echo json_encode(['success' => false, 'message' => 'Order cannot be cancelled at this stage']);
-        exit;
-    }
-
-    // Update order status
-    $stmt = $pdo->prepare("UPDATE orders SET status = 'cancelled' WHERE id = ?");
+    
+    // 2. Update order status to cancelled
+    $stmt = $pdo->prepare("UPDATE orders SET status = 'cancelled', updated_at = NOW() WHERE id = ?");
     $stmt->execute([$order_id]);
-
-    // Return success response
+    
+    // 3. Restore product quantities (if needed)
+    $stmt = $pdo->prepare("
+        SELECT product_id, quantity 
+        FROM order_items 
+        WHERE order_id = ?
+    ");
+    $stmt->execute([$order_id]);
+    $items = $stmt->fetchAll();
+    
+    foreach ($items as $item) {
+        $stmt = $pdo->prepare("
+            UPDATE products 
+            SET stock_quantity = stock_quantity + ? 
+            WHERE product_id = ?
+        ");
+        $stmt->execute([$item['quantity'], $item['product_id']]);
+    }
+    
+    // Commit transaction
+    $pdo->commit();
+    
+    header('Content-Type: application/json');
     echo json_encode(['success' => true, 'message' => 'Order cancelled successfully']);
     
 } catch (PDOException $e) {
+    $pdo->rollBack();
+    header('Content-Type: application/json');
     echo json_encode(['success' => false, 'message' => 'Database error: ' . $e->getMessage()]);
 }
 ?>

@@ -17,6 +17,7 @@ $admin = $stmt->fetch();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - FreshMart</title>
+    <link rel="icon" type="image/png" href="https://play-lh.googleusercontent.com/sLryvFBeu87MizPZ72_P1wS6RCj0e4mHd71uSdee_uR-TYDYJnW8KOMWK3xdfw6dmA">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
