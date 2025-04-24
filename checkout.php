@@ -337,7 +337,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         foreach ($products as $product):
                             $quantity = $_SESSION['cart'][$product['product_id']]['quantity'];
-                            $subtotal = $product['price'] * 10 * $quantity;
+                            $subtotal = $product['price']  * $quantity;
                             $total += $subtotal;
                         ?>
                             <div class="d-flex justify-content-between mb-2">

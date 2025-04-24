@@ -31,7 +31,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
             'stock' => $product['stock_quantity'],
             'subtotal' => $product['price']  * $cart_item['quantity']
         ];
-        $total += $product['price']  * $cart_item['quantity'];
+        $total += $product['price']  * $cart_item['quantity'] ;
     }
 }
 
