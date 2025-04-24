@@ -31,6 +31,25 @@ if (!$order) {
 $stmt = $pdo->prepare("SELECT oi.*, p.name, p.photo_url FROM order_items oi JOIN products p ON oi.product_id = p.product_id WHERE oi.order_id = ?");
 $stmt->execute([$order_id]);
 $order_items = $stmt->fetchAll();
+
+// Calculate all amounts with precise decimal handling
+$subtotal = 0.00;
+$item_subtotals = [];
+
+foreach ($order_items as $item) {
+    $item_subtotal = round($item['price'] * $item['quantity'], 2);
+    $item_subtotals[] = $item_subtotal;
+    $subtotal += $item_subtotal;
+}
+
+$subtotal = round($subtotal, 2);
+$shipping_fee = 50.00;
+$tax_rate = 0.10;
+$tax_amount = round($subtotal * $tax_rate, 2);
+$calculated_total = round($subtotal + $shipping_fee + $tax_amount, 2);
+
+// Use database total if it exists, otherwise use calculated total
+$display_total = isset($order['total_amount']) ? round($order['total_amount'], 2) : $calculated_total;
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +84,7 @@ $order_items = $stmt->fetchAll();
                         <p><strong>Order Date:</strong> <?php echo date('F j, Y', strtotime($order['created_at'])); ?></p>
                         <p><strong>Status:</strong> <span class="badge bg-info"><?php echo ucfirst($order['status']); ?></span></p>
                         <p><strong>Payment Method:</strong> <?php echo strtoupper($order['payment_method']); ?></p>
-                        <p><strong>Total Amount:</strong> ৳<?php echo number_format($order['total_amount'], 2); ?></p>
+                        <p><strong>Total Amount:</strong> ৳<?php echo number_format($display_total, 2); ?></p>
                     </div>
                     <div class="col-md-6">
                         <h4>Shipping Address</h4>
@@ -87,7 +106,7 @@ $order_items = $stmt->fetchAll();
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($order_items as $item): ?>
+                            <?php foreach ($order_items as $index => $item): ?>
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center">
@@ -99,26 +118,26 @@ $order_items = $stmt->fetchAll();
                                     </td>
                                     <td>৳<?php echo number_format($item['price'], 2); ?></td>
                                     <td><?php echo $item['quantity']; ?></td>
-                                    <td>৳<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
+                                    <td>৳<?php echo number_format($item_subtotals[$index], 2); ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                         <tfoot>
                             <tr>
                                 <td colspan="3" class="text-end"><strong>Subtotal:</strong></td>
-                                <td>৳<?php echo number_format($order['total_amount'] - 5 - ($order['total_amount'] * 0.1), 2); ?></td>
+                                <td>৳<?php echo number_format($subtotal, 2); ?></td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end"><strong>Shipping:</strong></td>
-                                <td>৳50.00</td>
+                                <td>৳<?php echo number_format($shipping_fee, 2); ?></td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-end"><strong>Tax (10%):</strong></td>
-                                <td>৳<?php echo number_format($order['total_amount'] * 0.1, 2); ?></td>
+                                <td>৳<?php echo number_format($tax_amount, 2); ?></td>
                             </tr>
-                            <tr>
+                            <tr class="total-row">
                                 <td colspan="3" class="text-end"><strong>Total:</strong></td>
-                                <td>৳<?php echo number_format($order['total_amount'], 2); ?></td>
+                                <td>৳<?php echo number_format($display_total, 2); ?></td>
                             </tr>
                         </tfoot>
                     </table>
