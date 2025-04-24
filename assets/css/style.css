@@ -363,6 +363,23 @@ a {
         width: 80px;
         height: 80px;
     }
+
+    /* Footer adjustments for tablet */
+    footer {
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -381,5 +398,50 @@ a {
     .carousel-caption .btn {
         font-size: 0.8rem;
         padding: 0.3rem 0.6rem;
+    }
+
+    /* Footer adjustments for mobile */
+    footer {
+        padding: 15px 0;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .footer-copyright {
+        margin-top: 10px;
+    }
+}
+
+/* Additional responsive breakpoints */
+@media (min-width: 769px) and (max-width: 992px) {
+    /* Footer adjustments for small laptops */
+    footer {
+        text-align: center;
+    }
+    
+    .footer-content {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer-section {
+        margin: 0 20px 20px 20px;
+    }
+}
+
+@media (min-width: 993px) {
+    /* Footer adjustments for large laptops and PCs */
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer-container {
+        width: 100%;
+        max-width: 1200px;
     }
 }
